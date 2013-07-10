@@ -1,12 +1,14 @@
 * what files are in a rpm package or file ?
-	rpm -qpl <rpm-file>
-	rpm -ql <installed-package-name>
-	dpkg-deb -c <deb-file>
+	$ rpm -qpl <rpm-file>
+	$ rpm -ql <installed-package-name>
+	$ dpkg-deb -c <deb-file>
 
 * query package name that a file belongs to
 	$ dpkg-query -S $(which catdoc)
 	catdoc: /usr/bin/catdoc
 
 * ldap lookup
-	ldapsearch -H 'ldap://ldap-server' -b 'ou=users,dc=example,dc=com' -v -x | less
+	$ ldapsearch -H 'ldap://ldap-server' -b 'ou=users,dc=example,dc=com' -v -x | less
 
+* get source code of package through apt-get
+	$ apt-get source virt-manager
