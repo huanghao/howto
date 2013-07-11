@@ -89,6 +89,21 @@ def search(dbpath, notespath, querystring, offset=0, count=1):
         print ''.join([ i for i in notes[start:end] if i.strip() ])
 
 
+def update(dbpath, notespath):
+    make = 1
+    lastchange = os.path.join(dbpath, 'lastchange')
+    if os.path.exists(lastchange):
+        db_mtime = os.stat(lastchange).st_mtime
+        notes_mtime = os.stat(notespath).st_mtime
+        if db_mtime >= notes_mtime:
+            make = 0
+
+    if make:
+        print 'rebuilding index...'
+        os.system('{} -i'.format(sys.argv[0]))
+        os.system('touch {}'.format(lastchange))
+
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--rebuild-index', action='store_true')
@@ -115,4 +130,5 @@ if __name__ == '__main__':
                 sys.exit(0)
         make_index(args.db_path, parse_notes(args.notes_path))
     else:
+        update(args.db_path, args.notes_path)
         search(args.db_path, args.notes_path, ' '.join(args.keywords), count=args.number)
