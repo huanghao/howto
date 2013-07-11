@@ -1,14 +1,50 @@
-* what files are in a rpm package or file ?
+* what files are in a rpm/deb package or file
 	$ rpm -qpl <rpm-file>
 	$ rpm -ql <installed-package-name>
 	$ dpkg-deb -c <deb-file>
 
-* query package name that a file belongs to
+* find the package name that a file belongs to
 	$ dpkg-query -S $(which catdoc)
 	catdoc: /usr/bin/catdoc
 
-* ldap lookup
+* ldap lookup via command line
 	$ ldapsearch -H 'ldap://ldap-server' -b 'ou=users,dc=example,dc=com' -v -x | less
 
 * get source code of package through apt-get
 	$ apt-get source virt-manager
+
+* remove trailing white spaces in git commit
+	$ git rebase --whitespace=fix HEAD^
+
+* create a new remote branch on git server
+	$ git push origin refs/heads/master:refs/heads/newbranch
+
+* link for gerrit change-ids line the hook which will automatically create "Change-Id" line in git commit message
+	http://gerrit-documentation.googlecode.com/svn/Documentation/2.6/user-changeid.html
+
+* VIM rc for python
+	http://wiki.python.org/moin/Vim
+
+* link for writing makefile
+	http://www.chinaunix.net/old_jh/23/408225.html
+
+* monitor data pass speed in pipeline
+	$ cat backup.iso | pv -b | nc -l 3333
+
+* nc works as a Port Scanner
+	$ nc -z 192.168.0.1 80-90
+	Connection to 192.168.0.1 80 port [tcp/http] succeeded!
+
+* On the client machine connect to the listening socket through an SSH tunnel:
+	$ ssh -f -L 23333:127.0.0.1:3333 me@192.168.0.1 sleep 10; \
+	    nc 127.0.0.1 23333 | pv -b > backup.iso
+
+* Tunnels that auto-close
+* even if the ssh client finishes its remote job (execution of sleep), it cannot exit because another process occupies the tunnel.
+* When vncviewer stops using the tunnel, then the ssh client exits too
+	[me@local]$ ssh -f -L 25901:127.0.0.1:5901 me@remote.example.org sleep 10; \
+            vncviewer 127.0.0.1:25901:1
+
+* SSH port-forwarding
+	https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding
+	$ ssh -L 5900:localhost:5900 joe@laptop
