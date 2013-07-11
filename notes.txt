@@ -39,7 +39,7 @@
 	$ ssh -f -L 23333:127.0.0.1:3333 me@192.168.0.1 sleep 10; \
 	    nc 127.0.0.1 23333 | pv -b > backup.iso
 
-* Tunnels that auto-close
+* start vnc via tunnels that auto-close
 * even if the ssh client finishes its remote job (execution of sleep), it cannot exit because another process occupies the tunnel.
 * When vncviewer stops using the tunnel, then the ssh client exits too
 	[me@local]$ ssh -f -L 25901:127.0.0.1:5901 me@remote.example.org sleep 10; \
