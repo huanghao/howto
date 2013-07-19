@@ -48,3 +48,8 @@
 * SSH port-forwarding
 	https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding
 	$ ssh -L 5900:localhost:5900 joe@laptop
+
+* Add a existing user to existing group
+	# usermod -a -G ftp tony
+	change tony user's primary group to www, enter:
+	# usermod -g www tony
