@@ -53,3 +53,15 @@
 	# usermod -a -G ftp tony
 	change tony user's primary group to www, enter:
 	# usermod -g www tony
+
+* boot parameters
+	$ man bootparam
+
+* clean command history in current session
+	$ export HISTSIZE=0
+	$ exit
+
+* Syntax of sudo
+	user machine=(effective user) command
+	david ns.oreillynet.com=(bind) /usr/sbin/rndc,/usr/sbin/named
+	rob ALL=(ALL) NOPASSWD: PROCS
