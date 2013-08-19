@@ -65,3 +65,14 @@
 	user machine=(effective user) command
 	david ns.oreillynet.com=(bind) /usr/sbin/rndc,/usr/sbin/named
 	rob ALL=(ALL) NOPASSWD: PROCS
+	- Code:
+	%admin ALL=(ALL)NOPASSWD:/usr/bin/apt-get
+	- To break it down:
+	%admin - All users of the admin group
+	ALL= - from any Host/IP
+	(ALL) - can run as any user
+	NOPASSWD - with no password required
+	:/usr/bin/apt-get - the list of comma, separated, applications.
+
+* How to list package dependees (reverse dependencies)?
+	$ apt-cache rdepends packagename
