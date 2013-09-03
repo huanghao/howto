@@ -76,3 +76,8 @@
 
 * How to list package dependees (reverse dependencies)?
 	$ apt-cache rdepends packagename
+
+* Opening files with the default program from a terminal
+* Open pdf from console
+	$ xdg-open myDocument.pdf
+	$ evince myDocument.pdf
