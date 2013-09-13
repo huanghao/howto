@@ -81,3 +81,9 @@
 * Open pdf from console
 	$ xdg-open myDocument.pdf
 	$ evince myDocument.pdf
+
+* Monitor load
+	$ nc host port | pv | tar xvf -
+	kvm-seed-hda-openSUSE_12.2-i586-debug.tar
+	 237MB 0:01:53 [1.19MB/s] [          <=>           ]
+
