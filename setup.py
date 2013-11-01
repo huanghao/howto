@@ -4,6 +4,6 @@ use_setuptools()
 from setuptools import setup
 
 setup(name='howto',
-      scripts=['howto.py'],
+      scripts=['howto.py', 'vihowto'],
       install_requires=['distribute'],
       )

@@ -87,3 +87,7 @@
 	kvm-seed-hda-openSUSE_12.2-i586-debug.tar
 	 237MB 0:01:53 [1.19MB/s] [          <=>           ]
 
+* Start a simple HTTP server by Twisted
+	$ twisted web --path . --port 8081
+	$ ps -lef | grep twisted
+	$ kill xxx
