@@ -6,6 +6,7 @@
 * find the package name that a file belongs to
 	$ dpkg-query -S $(which catdoc)
 	catdoc: /usr/bin/catdoc
+	$ rpm -qf some-file
 
 * ldap lookup via command line
 	$ ldapsearch -H 'ldap://ldap-server' -b 'ou=users,dc=example,dc=com' -v -x | less
@@ -91,3 +92,22 @@
 	$ twisted web --path . --port 8081
 	$ ps -lef | grep twisted
 	$ kill xxx
+
+* Handle sparse files efficiently
+	$ tar xvfzS xxx.tgz
+	$ cp --sparse=auto
+
+* sshpass
+       Run rsync over SSH using password authentication, passing the password on the command line:
+       $ rsync --rsh='sshpass -p 12345 ssh -l test' host.example.com:path .
+       To do the same from a bourne shell script in a marginally less exposed way:
+       $ SSHPASS=12345 rsync --rsh='sshpass -e ssh -l test' host.example.com:path .
+
+* Use wget to mirror a site
+	$ wget --mirror -p --adjust-extension --no-parent --convert-links -P $dir $url
+
+* Where is the man dir ?
+	$ grep MANDATORY_MANPATH /etc/manpath.config | grep -v '^#'
+	MANDATORY_MANPATH			/usr/man
+	MANDATORY_MANPATH			/usr/share/man
+	MANDATORY_MANPATH			/usr/local/share/man
