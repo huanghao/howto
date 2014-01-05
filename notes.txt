@@ -88,9 +88,9 @@
 	kvm-seed-hda-openSUSE_12.2-i586-debug.tar
 	 237MB 0:01:53 [1.19MB/s] [          <=>           ]
 
-* Start a simple HTTP server by Twisted
-	$ twisted web --path . --port 8081
-	$ ps -lef | grep twisted
+* Start a simple HTTP server by Twistd
+	$ twistd web --path . --port 8081
+	$ ps -lef | grep twistd
 	$ kill xxx
 
 * Handle sparse files efficiently
@@ -111,3 +111,6 @@
 	MANDATORY_MANPATH			/usr/man
 	MANDATORY_MANPATH			/usr/share/man
 	MANDATORY_MANPATH			/usr/local/share/man
+
+* Make bootable usb
+	$ sudo dd if=/path/to/file.iso of=/dev/sdc bs=4M
