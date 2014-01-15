@@ -112,5 +112,11 @@
 	MANDATORY_MANPATH			/usr/share/man
 	MANDATORY_MANPATH			/usr/local/share/man
 
-* Make bootable usb
-	$ sudo dd if=/path/to/file.iso of=/dev/sdc bs=4M
+* Delete certain line of a file
+	$ sed -i 201d /home/huanghao/.ssh/known_hosts
+
+* How to create a bootable USB stick
+	$ sudo dd bs=4M if=windows7.iso of=/dev/sdc
+
+* Show vertical bar at 80th column in vim
+	:set cc=80
