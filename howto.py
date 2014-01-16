@@ -3,6 +3,7 @@ import sys
 import shutil
 import hashlib
 import argparse
+from subprocess import check_call
 
 import xapian
 
@@ -15,7 +16,7 @@ def parse_notes(fname):
     notes = []
     
     for lineno, line in enumerate(open(fname)):
-        line = line.rstrip()
+        line = line.rstrip('\n')
         if state == 'closed':
             if title and content:
                 notes.append((title, content, (start, end)))
@@ -86,7 +87,7 @@ def search(dbpath, notespath, querystring, offset=0, count=1):
         pos = match.document.get_data()
         start, end = [ int(i) for i in pos.split(',', 1) ]
         print '[{}:{}] {}'.format(start, end, notespath)
-        print ''.join([ i for i in notes[start:end] if i.strip() ])
+        print ''.join([ i for i in notes[start:end] ])
 
 
 def update(dbpath, notespath):
@@ -100,8 +101,8 @@ def update(dbpath, notespath):
 
     if make:
         print 'rebuilding index...'
-        os.system('{} -i'.format(sys.argv[0]))
-        os.system('touch {}'.format(lastchange))
+        check_call(['python', sys.argv[0], '-i'])
+        check_call(['touch', lastchange])
 
 
 def parse_args():

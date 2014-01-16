@@ -120,3 +120,12 @@
 
 * Show vertical bar at 80th column in vim
 	:set cc=80
+
+* To see all the files the package installed onto your system, do this:
+	$ dpkg-query -L <package_name>
+	
+	To see the files a .deb file will install
+	$ dpkg-query -c <package_name.deb>
+	
+	To see the files contained in a package NOT installed
+	apt-file list <package_name>
