@@ -129,3 +129,6 @@
 	
 	To see the files contained in a package NOT installed
 	apt-file list <package_name>
+
+* How to cat a file without its 2 first lines ?
+	$ cat file | tail -n+2
