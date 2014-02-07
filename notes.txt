@@ -141,3 +141,8 @@
 
 * How to cat a file without its 2 first lines ?
 	$ cat file | tail -n+2
+
+* git:// through proxy
+	Have a look at core.gitproxy setting in Git config.
+	
+	http://stackoverflow.com/questions/5860888/git-through-proxy
