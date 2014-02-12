@@ -146,3 +146,7 @@
 	Have a look at core.gitproxy setting in Git config.
 	
 	http://stackoverflow.com/questions/5860888/git-through-proxy
+
+* Skip GIT SSL Verification
+	$ export GIT_SSL_NO_VERIFY=1
+	https://blog.breadncup.com/2011/06/09/skip-git-ssl-verification/
