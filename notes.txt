@@ -150,3 +150,10 @@
 * Skip GIT SSL Verification
 	$ export GIT_SSL_NO_VERIFY=1
 	https://blog.breadncup.com/2011/06/09/skip-git-ssl-verification/
+
+* Saving vim macros
+	qq..<macro keystrokes>..q
+	"qp
+	let @q = '...'
+	http://stackoverflow.com/questions/2024443/saving-vim-macros
+
