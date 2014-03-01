@@ -157,3 +157,19 @@
 	let @q = '...'
 	http://stackoverflow.com/questions/2024443/saving-vim-macros
 
+* How to get the hostname using terminal command-line?
+	$ nslookup www.baidu.com
+	Server:		127.0.0.1
+	Address:	127.0.0.1#53
+	
+	Non-authoritative answer:
+	www.baidu.com	canonical name = www.a.shifen.com.
+	Name:	www.a.shifen.com
+	Address: 61.135.169.105
+	Name:	www.a.shifen.com
+	Address: 61.135.169.125
+
+* I/O redirection via exec in bash
+	exec > $LOGFILE
+	exec 2>&1
+	http://tldp.org/LDP/abs/html/x17891.html
