@@ -173,3 +173,11 @@
 	exec > $LOGFILE
 	exec 2>&1
 	http://tldp.org/LDP/abs/html/x17891.html
+
+* How to extract(unzip) ZIP with non-UTF filename encoding in Linux
+	Here's how I test the encoding:
+	$ env LANG=GBK 7z l file.zip | iconv =f GBK -t utf8
+	
+	Here's how I extract and fix:
+	$ env LANG=GBK 7z x file.zip
+	$ find . -exec convmv -f GBK -t utf8 {} \;
