@@ -186,3 +186,16 @@
 	# ifconfig eth0 192.168.100.50 netmask 255.255.255.0
 	# route add default gw 192.168.100.1
 	# ifconfig eth0 up
+	
+	# vi /etc/network/interfaces
+	auto lo
+	iface lo inet loopback
+	iface eth0 inet static
+	address 192.168.100.50
+	getway 192.168.100.1
+	netmask 255.255.255.0
+	
+	# vi /etc/resolv.conf
+	nameserver 8.8.8.8
+	
+	# service networking restart
