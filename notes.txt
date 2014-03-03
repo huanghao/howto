@@ -181,3 +181,8 @@
 	Here's how I extract and fix:
 	$ env LANG=GBK 7z x file.zip
 	$ find . -exec convmv -f GBK -t utf8 {} \;
+
+* Set static IP
+	# ifconfig eth0 192.168.100.50 netmask 255.255.255.0
+	# route add default gw 192.168.100.1
+	# ifconfig eth0 up
