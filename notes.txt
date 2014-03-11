@@ -199,3 +199,7 @@
 	nameserver 8.8.8.8
 	
 	# service networking restart
+
+* Extract RPM packages
+	$ rpm2cpio file.rpm | cpio -idmv
+	http://www.wikihow.com/Extract-RPM-Packages
