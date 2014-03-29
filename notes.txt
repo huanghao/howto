@@ -113,7 +113,8 @@
        $ SSHPASS=12345 rsync --rsh='sshpass -e ssh -l test' host.example.com:path .
 
 * Use wget to mirror a site
-	$ wget --mirror -p --adjust-extension --no-parent --convert-links -P $dir $url
+	$ wget --mirror -w 20 -p --adjust-extension --no-parent --convert-links -P $dir $url
+	http://fosswire.com/post/2008/04/create-a-mirror-of-a-website-with-wget/
 
 * Where is the man dir ?
 	$ grep MANDATORY_MANPATH /etc/manpath.config | grep -v '^#'
@@ -203,3 +204,14 @@
 * Extract RPM packages
 	$ rpm2cpio file.rpm | cpio -idmv
 	http://www.wikihow.com/Extract-RPM-Packages
+
+* Fixing GPG Keys in UBUNTU
+	$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys XXXX
+
+* Sed - Delete one or more lines from a file
+	$ sed '3d' fileName.txt
+	$ sed -i".bak" '3d' filename.txt
+	$ sed '/awk/d' filename.txt
+	$ sed '$d' filename.txt
+	$ sed '/^$/d' filename.txt       
+	$ sed '/./!d' filename.txt
