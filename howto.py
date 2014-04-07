@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+from __future__ import print_function
 import os
 import sys
 import shutil
@@ -86,8 +88,8 @@ def search(dbpath, notespath, querystring, offset=0, count=1):
     for match in enquire.get_mset(offset, count):
         pos = match.document.get_data()
         start, end = [ int(i) for i in pos.split(',', 1) ]
-        print '[{}:{}] {}'.format(start, end, notespath)
-        print ''.join([ i for i in notes[start:end] ])
+        print('[{}:{}] {}'.format(start, end, notespath))
+        print(''.join([ i for i in notes[start:end] ]))
 
 
 def update(dbpath, notespath):
@@ -100,8 +102,8 @@ def update(dbpath, notespath):
             make = 0
 
     if make:
-        print 'rebuilding index...'
-        check_call(['python', sys.argv[0], '-i'])
+        print('rebuilding index...')
+        check_call([sys.executable, sys.argv[0], '-i'])
         check_call(['touch', lastchange])
 
 
@@ -127,7 +129,7 @@ if __name__ == '__main__':
                     raw_input('db exists, delete it first (N/y)? ').lower() in ('y', 'yes'):
                 shutil.rmtree(args.db_path)
             else:
-                print 'please handle it manually, exiting...'
+                print('please handle it manually, exiting...')
                 sys.exit(0)
         make_index(args.db_path, parse_notes(args.notes_path))
     else:

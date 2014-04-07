@@ -133,6 +133,7 @@
 
 * To see all the files the package installed onto your system, do this:
 	$ dpkg-query -L <package_name>
+	$ pacman -Ql package_name
 	
 	To see the files a .deb file will install
 	$ dpkg-query -c <package_name.deb>
