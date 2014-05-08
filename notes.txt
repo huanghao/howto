@@ -216,3 +216,13 @@
 	$ sed '$d' filename.txt
 	$ sed '/^$/d' filename.txt       
 	$ sed '/./!d' filename.txt
+
+* VIM paste blocks of code
+	:set paste
+	After
+	:set nopaste
+
+* Emacs find match brackets/parentheses
+	M-x show-paren-mode
+	M-c-p
+	M-c-n
