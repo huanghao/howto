@@ -226,3 +226,10 @@
 	M-x show-paren-mode
 	M-c-p
 	M-c-n
+
+* Combine pdf files with ghostscript(gs)
+	$ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=finished.pdf file*pdf
+
+* How to lower compiz memory usage
+	$ kill -HUP "compiz process id"
+	http://askubuntu.com/questions/82684/how-to-lower-compiz-memory-usage
