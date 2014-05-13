@@ -233,3 +233,18 @@
 * How to lower compiz memory usage
 	$ kill -HUP "compiz process id"
 	http://askubuntu.com/questions/82684/how-to-lower-compiz-memory-usage
+
+* How to deatch other tmux client
+	$ tmux detach -a
+	or
+	$ tmux lsc
+	/dev/pts/0: 0 [38x128 xterm] (utf8)
+	/dev/pts/9: 0 [30x101 xterm] (utf8)
+	$ tmux detach -t /dev/pts/9
+
+* How to push a tag to a remote repo using git
+	The following command should push tags:
+	$ git push --tags
+	or if you are looking to push a single tag:
+	$ git push origin <tag_name>
+	http://stackoverflow.com/questions/5195859/how-can-i-push-a-tag-to-a-remote-repository-using-git
