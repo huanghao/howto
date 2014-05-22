@@ -233,6 +233,7 @@
 * How to lower compiz memory usage
 	$ kill -HUP "compiz process id"
 	http://askubuntu.com/questions/82684/how-to-lower-compiz-memory-usage
+	$ ps -lef | grep 'compi[z]' | awk '{print $4}' | xargs kill -HUP
 
 * How to deatch other tmux client
 	$ tmux detach -a
