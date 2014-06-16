@@ -1,2 +1,10 @@
 #!/bin/bash
-vi ~/.howto/notes.txt
+if [ x$EDITOR = x ]; then
+   if which vim>/dev/null; then
+       EDITOR=vim
+   else
+       EDITOR=vi
+   fi
+fi
+
+$EDITOR ~/.howto/notes.txt

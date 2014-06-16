@@ -7,6 +7,8 @@
 	$ dpkg-query -S $(which catdoc)
 	catdoc: /usr/bin/catdoc
 	$ rpm -qf some-file
+	$ pacman -Qo identify
+	http://www.garron.me/en/linux/find-which-package-library-belongs.html
 
 * ldap lookup via command line
 	$ ldapsearch -H 'ldap://ldap-server' -b 'ou=users,dc=example,dc=com' -v -x | less
