@@ -251,3 +251,7 @@
 	or if you are looking to push a single tag:
 	$ git push origin <tag_name>
 	http://stackoverflow.com/questions/5195859/how-can-i-push-a-tag-to-a-remote-repository-using-git
+
+* Redmine Wiki image width control
+	!{width:300px}image_url!
+	http://www.redmine.org/boards/1/topics/20066
