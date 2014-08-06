@@ -9,12 +9,11 @@ from subprocess import check_call
 
 import xapian
 
-class SyntaxError(Exception):
-    pass
 
 def parse_notes(fname):
     state = 'closed'
     title, content = None, None
+    lineno, start, end = None, None, None
     notes = []
     
     for lineno, line in enumerate(open(fname)):
@@ -30,7 +29,7 @@ def parse_notes(fname):
             elif not line: # multi blank lines between notes
                 pass
             else:
-                raise SyntaxError("lineno:%d:expect title" % (lineno+1))
+                raise Exception("lineno:%d:expect title" % (lineno+1))
         elif state == 'saw_title':
             if line.startswith('*'):
                 title.append(line[1:].strip())
