@@ -284,3 +284,11 @@
 	to resize only one edge of the selected region
 	- Option,
 	to resize the selected region with its center as the anchor point
+
+* Undo git add before commit(unstage)
+	$ git rm --cached <file>
+
+* MySQL - Disable foreign key checks or constraints
+	mysql> SET foreign_key_checks = 0;
+	
+	http://gauravsohoni.wordpress.com/2009/03/09/mysql-disable-foreign-key-checks-or-constraints/
