@@ -7,4 +7,9 @@ if [ x$EDITOR = x ]; then
    fi
 fi
 
-$EDITOR ~/.howto/notes.txt
+HOWTODIR=~/.howto
+if [ ! -e $HOWTODIR ]; then
+    mkdir $HOWTODIR
+    ln -s ~/workspace/howto/notes.txt $HOWTODIR
+fi
+$EDITOR $HOWTODIR/notes.txt

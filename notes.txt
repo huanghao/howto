@@ -292,3 +292,9 @@
 	mysql> SET foreign_key_checks = 0;
 	
 	http://gauravsohoni.wordpress.com/2009/03/09/mysql-disable-foreign-key-checks-or-constraints/
+
+* Mac special characters
+	opt + K: Apple icon
+	opt + g: copyright
+	opt + p: pi
+	opt + *, opt + shift + *
